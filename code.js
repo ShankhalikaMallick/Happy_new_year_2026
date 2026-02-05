@@ -4,24 +4,42 @@ const envelope = document.querySelector('#envelope-box');
 btn.addEventListener('click', () => {
   btn.style.display = 'none';
 
-  // Step 1: Make it visible
   envelope.classList.remove('hidden');
-
-  // Step 2: FORCE browser repaint
-  envelope.offsetHeight; // 🔑 VERY IMPORTANT
-
-  // Step 3: Trigger bounce pop
+  void envelope.offsetWidth; 
   envelope.classList.add('pop');
 
-  // Step 4: Open envelope after pop
+  // TRIGGER 1: Gold and White at the 4s mark
   setTimeout(() => {
     envelope.classList.add('open');
 
     confetti({
-      particleCount: 200,
+      particleCount: 250,
       spread: 100,
-      origin: { y: 0.6 },
+      origin: { y: 0.5 },
+      zIndex: 9999, 
+      colors: ['#d4af37', '#ffffff', '#ffd700'] // Gold, White, Bright Gold
+    });
+  }, 4000); 
+
+  // TRIGGER 2: Side safety bursts (Now themed Gold and White)
+  setTimeout(() => {
+    // Left side burst
+    confetti({
+      particleCount: 150,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      zIndex: 9999,
+      colors: ['#d4af37', '#ffffff', '#ffd700'] 
+    });
+    // Right side burst
+    confetti({
+      particleCount: 150,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      zIndex: 9999,
       colors: ['#d4af37', '#ffffff', '#ffd700']
     });
-  }, 600);
+  }, 5500);
 });

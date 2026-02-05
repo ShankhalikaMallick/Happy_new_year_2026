@@ -1,13 +1,15 @@
 <div class="container">
-  <div class="envelope-wrapper hidden" id="envelope-box">
-    <div class="envelope">
+  <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;"></canvas>
+
+  <div class="envelope-anchor hidden" id="envelope-box">
+    <div class="envelope-wrapper">
+      <div class="envelope-front"></div>
       <div class="letter">
         <div class="text">
-          <h3>Happy New Year </h3>
+          <h3>Happy New Year</h3>
           <h4>2026</h4>
-          <p>May your year be as bright as the stars and filled with golden opportunities. Hope you have a happy, peaceful, fulfilling and
-            healthy year ahead.          </p>
-          <div class="signature">With love, Shankha</div>
+          <p>May your year be as bright as the stars and filled with golden opportunities!</p>
+          <div class="signature">With love, Shankhalika</div>
         </div>
       </div>
     </div>
@@ -16,4 +18,4 @@
   <button id="action-btn">Best Wishes</button>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
